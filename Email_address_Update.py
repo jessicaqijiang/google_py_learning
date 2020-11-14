@@ -15,7 +15,8 @@ def contains_domain(address, domain):
 
 def replace_domain(address, old_domain, new_domain):
   """Replaces the old domain with the new domain in the received address."""
-  old_domain_pattern = r" " + old_domain + "$"
+  #old pattern "" add old_domain add ends str
+  old_domain_pattern = r"" + old_domain + "$"
   address = re.sub(old_domain_pattern, new_domain, address)
   return address
 
@@ -23,7 +24,7 @@ def main():
   """Processes the list of emails, replacing any instances of the old domain with the new domain."""
   old_domain, new_domain = "abc.edu", "xyz.edu"
   csv_file ="/home/student-00-47d6a3159870/data/user_emails.csv"
-  report_file = "/home/student-00-47d6a3159870/data/" + "/update_user_emails.csv"
+  report_file = "/home/student-00-47d6a3159870/data" + "/updated_user_emails.csv"
   #Create List
   user_email_list = []
   old_domain_email_list = []
