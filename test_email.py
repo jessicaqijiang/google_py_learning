@@ -4,8 +4,8 @@ import unittest
 from emails import find_email
 
 #Create Email test class
-class EmailTest(unittest.TestCase):
-   def test_basid(self):
+class EmailsTest(unittest.TestCase):
+   def test_basic(self):
       testcase = [None, "Bree","Campbell"]
       expected = "breee@abc.edu"
       self.assertEqual(find_email(testcase),expected)
@@ -18,7 +18,7 @@ class EmailTest(unittest.TestCase):
    def test_two_name(self):
       testcase = [None,"Roy","Cooper"]
       expected = "No email address found"
-      self.asserEqual(find_email(testcase),expected)
+      self.assertEqual(find_email(testcase),expected)
 
 
 if __name__ == '__main__':
