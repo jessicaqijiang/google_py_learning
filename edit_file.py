@@ -16,18 +16,35 @@ student-01-c02e2caebdce@linux-instance:~/data$ cat list.txt
 student-01-c02e2caebdce@linux-instance:~/data$ ls
 jane_contact_07292018.csv  jane_profile_07272018.doc  janez_profile_11042019.doc  kwood_pic_04032017.jpg  kwood_profile_04022017.doc  list.txt  pchow_pic_05162019.jpg
 
+# find all files with "jane"
+grep ' jane ' ../data/list.txt | cut -d ' ' -f 3
+
+data/jane_profile_07272018.doc
+data/jane_pic_07282018.jpg
+data/jane_contact_07292018.csv
+
+# if put 'jane' --
+grep 'jane' ../data/list.txt | cut -d ' ' -f 3
+data/jane_profile_07272018.doc
+data/janez_profile_11042019.doc
+data/jane_pic_07282018.jpg
+data/jane_contact_07292018.csv
+
 
 #!/bin/bash
-#create empry rile oldFiles.txt
+#create empty file oldFiles.txt
 > oldFiles.txt
-files=`grep 'jane' ../data/list.txt | cut -d ' ' -f 3`
-#echo "$files" >> oldFiles.txt
+files= $(grep 'jane' ../data/list.txt | cut -d' ' -f 3)
 for file in $files; do
+#if file in the files, print files and append to empty file which been created
   if [ -e $HOME$file ]; then
     echo $HOME$file >> oldFiles.txt;
   fi
   done
-  
+## -- Ateention #HOME# --
+
+
+
 #Change file name
 #!/usr/bin/env python3
 
